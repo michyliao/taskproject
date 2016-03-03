@@ -10,17 +10,20 @@ import json
 
 # Create your views here.
 def home(request):
-	form = TaskForm()
+	form = TaskForm() #Send in form input for Task
 	return render(request, 'task/index.html', {'form' : form})
 
 
 @api_view(['GET','POST'])
 def task_collection(request):
+
+	#To view all Task Objects
     if request.method == 'GET':
         tasks = Task.objects.all()
-        serializer = TaskSerializer(tasks, many=True)
+        serializer = TaskSerializer(tasks, many=True) #Serialize all value to be sent over
         return Response(serializer.data)
     
+    #To create a new Task Object
     elif request.method == 'POST':
     	data = {
     		'title' : request.data.get('title'),
@@ -44,6 +47,7 @@ def task_element(request, pk):
     except Task.DoesNotExist:
         return HttpResponse(status=404)
 
+    #Get specific Task by PK
     if request.method == 'GET':
         serializer = TaskSerializer(task)
         return Response(serializer.data)
