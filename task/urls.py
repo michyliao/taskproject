@@ -3,6 +3,7 @@ from django.conf.urls import patterns, url
 from . import views
 
 
+
 urlpatterns = patterns(
     'task.views',
     url(r'^$', 'home'),
