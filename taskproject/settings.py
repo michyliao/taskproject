@@ -134,10 +134,19 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = 'staticfiles'
+
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'static'),
+# )
+
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'staticfiles')
+# STATIC_URL = '/static/'
+# ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    # I have the static folder inside my app and not inside the project
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 
