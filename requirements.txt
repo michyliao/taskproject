@@ -3,3 +3,5 @@ django-angular==0.7.16
 djangorestframework==3.3.2
 MySQL-python==1.2.5
 wheel==0.29.0
+gunicorn==19.4.5
+virtualenv==14.0.6
