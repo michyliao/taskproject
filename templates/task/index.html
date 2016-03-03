@@ -1,0 +1,38 @@
+{% extends "task/base.html" %}
+{% block content %}
+
+
+<br><br>
+<div class="row white">
+    <div class="large-12 columns">
+        <h2>Tasks</h2>
+    </div>
+</div>
+
+<div class="row white">
+    <div class="columns large-12">
+        <form method="POST" id="task-form">
+            {% csrf_token %}
+            <div class="fieldWrapper" id="the_task">
+                {{ form.as_p }}
+            </div>
+            <div id="results"></div>
+            <input type="submit" value="Post" class="tiny button">
+        </form>
+    </div>
+</div>
+
+
+
+<!-- The feed -->
+<div class="row white">
+    <div class="columns large-12">
+    <h2>Your current tasks</h2>
+        <ul id="talk">
+            <!-- JSON VALUES WILL BE INSERTED HERE -->
+        </ul>
+    </div>
+</div>
+
+<script src="static/scripts/main.js"></script>
+{% endblock %}
