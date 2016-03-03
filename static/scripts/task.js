@@ -1,5 +1,8 @@
+/*
 
+js file that handles the request and response for GET,POST
 
+*/
 $(function() {
     
     //OnLoad

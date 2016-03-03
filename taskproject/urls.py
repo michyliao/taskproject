@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from . import settings
 
+
+#heroku static files settings (Reference : http://stackoverflow.com/questions/9047054/heroku-handling-static-files-in-django-app)
 if not settings.DEBUG:
     urlpatterns = [
 	    url(r'^', include('task.urls')), #include task urls.py

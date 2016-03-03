@@ -32,6 +32,8 @@ def task_collection(request):
     	
     	serializer = TaskSerializer(data=data)
     	
+
+    	#If the task serializer is valid then save it, otherwise return 400 bad request
     	if serializer.is_valid():
     		serializer.save()
     		return Response(serializer.data, status=status.HTTP_201_CREATED)
